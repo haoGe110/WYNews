@@ -20,7 +20,18 @@ static  NSString * cellId = @"cellId";
     [super viewDidLoad];
 
     [self setUIup];
+    [self loadData];
 }
+
+- (void)loadData
+{
+    [[CZNetworkManager sharedManager] newsListWithChannel:@"T1348649079062" start:0 completion:^(NSArray *array, NSError *error) {
+        
+        NSLog(@"%@",array);
+        
+    }];
+}
+
 - (void)setUIup
 {
     self.view.backgroundColor = [UIColor brownColor];
