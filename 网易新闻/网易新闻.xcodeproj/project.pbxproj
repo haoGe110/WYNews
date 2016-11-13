@@ -26,6 +26,9 @@
 		040DA4FB1DCDA6040039DCB6 /* WYMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040DA4FA1DCDA6040039DCB6 /* WYMainController.m */; };
 		04563E0D1DD07B3100D5F93D /* WYNewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04563E0C1DD07B3100D5F93D /* WYNewsListViewController.m */; };
 		046573C71DD6100D00703289 /* CZNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 046573C61DD6100D00703289 /* CZNetworkManager.m */; };
+		046573CA1DD6185E00703289 /* WYNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 046573C91DD6185E00703289 /* WYNewsModel.m */; };
+		046573CE1DD6237100703289 /* WYNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046573CC1DD6237100703289 /* WYNormalCell.m */; };
+		046573CF1DD6237100703289 /* WYNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046573CD1DD6237100703289 /* WYNormalCell.xib */; };
 		587C0F90B8D48BEC7B025033 /* libPods-网易新闻.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F427A00722C1F9ECBD0D99D1 /* libPods-网易新闻.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +72,11 @@
 		04563E0C1DD07B3100D5F93D /* WYNewsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsListViewController.m; sourceTree = "<group>"; };
 		046573C51DD6100D00703289 /* CZNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CZNetworkManager.h; path = Tools/Additions/CZNetworkManager.h; sourceTree = "<group>"; };
 		046573C61DD6100D00703289 /* CZNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CZNetworkManager.m; path = Tools/Additions/CZNetworkManager.m; sourceTree = "<group>"; };
+		046573C81DD6185E00703289 /* WYNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsModel.h; sourceTree = "<group>"; };
+		046573C91DD6185E00703289 /* WYNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNewsModel.m; sourceTree = "<group>"; };
+		046573CB1DD6237100703289 /* WYNormalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNormalCell.h; sourceTree = "<group>"; };
+		046573CC1DD6237100703289 /* WYNormalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYNormalCell.m; sourceTree = "<group>"; };
+		046573CD1DD6237100703289 /* WYNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYNormalCell.xib; sourceTree = "<group>"; };
 		2711B5671EBD41C158F51464 /* Pods-网易新闻.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-网易新闻.release.xcconfig"; path = "Pods/Target Support Files/Pods-网易新闻/Pods-网易新闻.release.xcconfig"; sourceTree = "<group>"; };
 		3C57E20859836F7928637C33 /* Pods-网易新闻.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-网易新闻.debug.xcconfig"; path = "Pods/Target Support Files/Pods-网易新闻/Pods-网易新闻.debug.xcconfig"; sourceTree = "<group>"; };
 		F427A00722C1F9ECBD0D99D1 /* libPods-网易新闻.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-网易新闻.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +192,11 @@
 			children = (
 				04563E0B1DD07B3100D5F93D /* WYNewsListViewController.h */,
 				04563E0C1DD07B3100D5F93D /* WYNewsListViewController.m */,
+				046573C81DD6185E00703289 /* WYNewsModel.h */,
+				046573C91DD6185E00703289 /* WYNewsModel.m */,
+				046573CB1DD6237100703289 /* WYNormalCell.h */,
+				046573CC1DD6237100703289 /* WYNormalCell.m */,
+				046573CD1DD6237100703289 /* WYNormalCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -276,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				040DA4C51DCD99310039DCB6 /* LaunchScreen.storyboard in Resources */,
+				046573CF1DD6237100703289 /* WYNormalCell.xib in Resources */,
 				040DA4C21DCD99310039DCB6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				046573C71DD6100D00703289 /* CZNetworkManager.m in Sources */,
+				046573CE1DD6237100703289 /* WYNormalCell.m in Sources */,
 				040DA4EE1DCDA4AF0039DCB6 /* UIColor+CZAddition.m in Sources */,
 				040DA4E81DCDA4AF0039DCB6 /* NSAttributedString+CZAdditon.m in Sources */,
 				040DA4EC1DCDA4AF0039DCB6 /* NSString+CZPath.m in Sources */,
@@ -347,6 +362,7 @@
 				040DA4EB1DCDA4AF0039DCB6 /* NSString+CZHash.m in Sources */,
 				040DA4EF1DCDA4AF0039DCB6 /* UILabel+CZAddition.m in Sources */,
 				04563E0D1DD07B3100D5F93D /* WYNewsListViewController.m in Sources */,
+				046573CA1DD6185E00703289 /* WYNewsModel.m in Sources */,
 				040DA4EA1DCDA4AF0039DCB6 /* NSString+CZBase64.m in Sources */,
 				040DA4E91DCDA4AF0039DCB6 /* NSObject+CZRuntime.m in Sources */,
 				040DA4F21DCDA4AF0039DCB6 /* UIViewController+CZAddition.m in Sources */,

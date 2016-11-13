@@ -7,11 +7,16 @@
 //
 
 #import "WYNewsListViewController.h"
+#import "WYNewsModel.h"
+#import "WYNormalCell.h"
+#import <UIImageView+WebCache.h>
 
 static  NSString * cellId = @"cellId";
 @interface WYNewsListViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@property(nonatomic,weak)UITableView * tableView;
+@property(nonatomic,strong)UITableView * tableView;
+
+@property(nonatomic,strong)NSArray <WYNewsModel *>* newsList;
 @end
 
 @implementation WYNewsListViewController
@@ -29,6 +34,17 @@ static  NSString * cellId = @"cellId";
         
         NSLog(@"%@",array);
         
+        NSMutableArray * marr = [NSMutableArray array];
+        for (NSDictionary * dict in array) {
+            
+            WYNewsModel * model = [[WYNewsModel alloc]init];
+            [model setValuesForKeysWithDictionary:dict];
+            
+            [marr addObject:model];
+        }
+        
+        _newsList = marr.copy;
+        [self.tableView reloadData];
     }];
 }
 
@@ -37,6 +53,10 @@ static  NSString * cellId = @"cellId";
     self.view.backgroundColor = [UIColor brownColor];
     
     UITableView * tv = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+    
+    tv.estimatedRowHeight = 100;
+    tv.rowHeight = UITableViewAutomaticDimension;
+
     [self.view addSubview:tv];
     
     [tv mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -44,7 +64,7 @@ static  NSString * cellId = @"cellId";
     }];
     
     // 注册原型cell
-    [tv registerClass:[UITableViewCell class] forCellReuseIdentifier:cellId];
+    [tv registerNib:[UINib nibWithNibName:@"WYNormalCell" bundle:nil] forCellReuseIdentifier:cellId];
     
     tv.delegate = self;
     tv.dataSource = self;
@@ -55,13 +75,19 @@ static  NSString * cellId = @"cellId";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return _newsList.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    cell.textLabel.text = @(indexPath.row).description;
+    WYNormalCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    WYNewsModel * model = _newsList[indexPath.row];
+    cell.titleLabel.text =model.title;
+    cell.sourcceLabel.text = model.source;
+    cell.numLabel.text = @(model.replyCount).description;
+
+    NSURL * url = [NSURL URLWithString:model.imgsrc];
     
+    [cell.imagView sd_setImageWithURL:url];
     return cell;
 }
 @end
