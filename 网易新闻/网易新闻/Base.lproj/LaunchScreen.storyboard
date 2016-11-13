@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="about_hd" translatesAutoresizingMaskIntoConstraints="NO" id="IoA-ng-tfZ">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="about_hd" translatesAutoresizingMaskIntoConstraints="NO" id="IoA-ng-tfZ">
                                 <rect key="frame" x="16" y="498" width="343" height="149"/>
                             </imageView>
                         </subviews>
