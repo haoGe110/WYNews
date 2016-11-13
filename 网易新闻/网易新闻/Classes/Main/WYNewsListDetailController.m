@@ -8,18 +8,23 @@
 
 #import "WYNewsListDetailController.h"
 #import "WYChanelView.h"
-
+#import "WYchanelModel.h"
 
 @interface WYNewsListDetailController ()
 
 @end
 
 @implementation WYNewsListDetailController
+{
+    NSArray <WYchanelModel *> * _chanelList;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     [self setUIup];
+    _chanelList = [WYchanelModel chanelModel];
+    NSLog(@"%@",_chanelList);
 }
 
 - (void)setUIup

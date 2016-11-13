@@ -31,6 +31,8 @@
 		046318661DD86E8900AF6308 /* WYNewsListDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046318651DD86E8900AF6308 /* WYNewsListDetailController.m */; };
 		0463186A1DD872FC00AF6308 /* WYChanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046318691DD872FC00AF6308 /* WYChanelView.m */; };
 		0463186C1DD8731200AF6308 /* WYChanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0463186B1DD8731200AF6308 /* WYChanelView.xib */; };
+		046318701DD8A54800AF6308 /* WYchanelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0463186F1DD8A54800AF6308 /* WYchanelModel.m */; };
+		046318721DD8A5C800AF6308 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 046318711DD8A5C800AF6308 /* topic_news.json */; };
 		046573C71DD6100D00703289 /* CZNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 046573C61DD6100D00703289 /* CZNetworkManager.m */; };
 		046573CA1DD6185E00703289 /* WYNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 046573C91DD6185E00703289 /* WYNewsModel.m */; };
 		046573CE1DD6237100703289 /* WYNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046573CC1DD6237100703289 /* WYNormalCell.m */; };
@@ -84,6 +86,9 @@
 		046318681DD872FC00AF6308 /* WYChanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYChanelView.h; sourceTree = "<group>"; };
 		046318691DD872FC00AF6308 /* WYChanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYChanelView.m; sourceTree = "<group>"; };
 		0463186B1DD8731200AF6308 /* WYChanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WYChanelView.xib; sourceTree = "<group>"; };
+		0463186E1DD8A54800AF6308 /* WYchanelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYchanelModel.h; sourceTree = "<group>"; };
+		0463186F1DD8A54800AF6308 /* WYchanelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYchanelModel.m; sourceTree = "<group>"; };
+		046318711DD8A5C800AF6308 /* topic_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topic_news.json; sourceTree = "<group>"; };
 		046573C51DD6100D00703289 /* CZNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CZNetworkManager.h; path = Tools/Additions/CZNetworkManager.h; sourceTree = "<group>"; };
 		046573C61DD6100D00703289 /* CZNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CZNetworkManager.m; path = Tools/Additions/CZNetworkManager.m; sourceTree = "<group>"; };
 		046573C81DD6185E00703289 /* WYNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYNewsModel.h; sourceTree = "<group>"; };
@@ -249,11 +254,30 @@
 			children = (
 				046318641DD86E8900AF6308 /* WYNewsListDetailController.h */,
 				046318651DD86E8900AF6308 /* WYNewsListDetailController.m */,
+				0463186D1DD8A35500AF6308 /* 频道视图 */,
+			);
+			name = "大控制器";
+			sourceTree = "<group>";
+		};
+		0463186D1DD8A35500AF6308 /* 频道视图 */ = {
+			isa = PBXGroup;
+			children = (
 				046318681DD872FC00AF6308 /* WYChanelView.h */,
 				046318691DD872FC00AF6308 /* WYChanelView.m */,
 				0463186B1DD8731200AF6308 /* WYChanelView.xib */,
+				046318731DD8A75900AF6308 /* 频道模型 */,
 			);
-			name = "大控制器";
+			name = "频道视图";
+			sourceTree = "<group>";
+		};
+		046318731DD8A75900AF6308 /* 频道模型 */ = {
+			isa = PBXGroup;
+			children = (
+				0463186E1DD8A54800AF6308 /* WYchanelModel.h */,
+				0463186F1DD8A54800AF6308 /* WYchanelModel.m */,
+				046318711DD8A5C800AF6308 /* topic_news.json */,
+			);
+			name = "频道模型";
 			sourceTree = "<group>";
 		};
 		3E2E648309D43FA1B8494DD5 /* Frameworks */ = {
@@ -336,6 +360,7 @@
 			files = (
 				040DA4C51DCD99310039DCB6 /* LaunchScreen.storyboard in Resources */,
 				0461CED71DD91B1600D1FB73 /* WYNewsBigImageCell.xib in Resources */,
+				046318721DD8A5C800AF6308 /* topic_news.json in Resources */,
 				0461CED51DD91B1600D1FB73 /* WYNewsExtraImagesCell.xib in Resources */,
 				0463186C1DD8731200AF6308 /* WYChanelView.xib in Resources */,
 				046318631DD857CE00AF6308 /* WYNewsListHeader.xib in Resources */,
@@ -401,6 +426,7 @@
 			files = (
 				046573C71DD6100D00703289 /* CZNetworkManager.m in Sources */,
 				046573CE1DD6237100703289 /* WYNormalCell.m in Sources */,
+				046318701DD8A54800AF6308 /* WYchanelModel.m in Sources */,
 				040DA4EE1DCDA4AF0039DCB6 /* UIColor+CZAddition.m in Sources */,
 				040DA4E81DCDA4AF0039DCB6 /* NSAttributedString+CZAdditon.m in Sources */,
 				040DA4EC1DCDA4AF0039DCB6 /* NSString+CZPath.m in Sources */,
