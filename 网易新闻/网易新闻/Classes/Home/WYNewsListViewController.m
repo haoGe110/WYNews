@@ -104,27 +104,8 @@ static  NSString * HeaderId = @"HeaderId";
     
     WYNormalCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     
-    cell.titleLabel.text =model.title;
-    cell.sourcceLabel.text = model.source;
-    cell.numLabel.text = @(model.replyCount).description;
-
-    NSURL *imageURL = [NSURL URLWithString:model.imgsrc];
-    [cell.imagView sd_setImageWithURL:imageURL];
-    
-    // 设置多图 － 如果没有不会进入循环
-    NSInteger idx = 0;
-    for (NSDictionary *dict in model.imgextra) {
-        
-        // 1. 获取url字符串
-        NSURL *url = [NSURL URLWithString:dict[@"imgsrc"]];
-        
-        // 2. 设置图像
-        UIImageView *iv = cell.extraIcon[idx++];
-        
-        [iv sd_setImageWithURL:url];
-
-    }
-     return cell;
+    cell.listModel = model;
+    return cell;
 }
 @end
 

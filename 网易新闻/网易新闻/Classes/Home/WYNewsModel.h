@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 @interface WYNewsModel : NSObject
 
 /**
@@ -44,6 +43,8 @@
  是否有顶部图片
  */
 @property(nonatomic,assign)BOOL hasHead;
+
+
 @end
 
 

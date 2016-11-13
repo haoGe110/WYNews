@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WYNewsModel.h"
 
 @interface WYNormalCell : UITableViewCell
 // 首张图片
@@ -22,4 +23,14 @@
 
 // 多图集合
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *extraIcon;
+
+@property (nonatomic,strong) WYNewsModel * listModel;
 @end
+
+
+
+
+
+
+
+
