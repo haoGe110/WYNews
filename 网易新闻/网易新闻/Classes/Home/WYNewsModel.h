@@ -35,6 +35,15 @@
  * 多图新闻的其余图片
  */
 @property (nonatomic, strong) NSArray *imgextra;
+
+/**
+ * 是否大图标记
+ */
+@property (nonatomic, assign) BOOL imgType;
+/*
+ 是否有顶部图片
+ */
+@property(nonatomic,assign)BOOL hasHead;
 @end
 
 

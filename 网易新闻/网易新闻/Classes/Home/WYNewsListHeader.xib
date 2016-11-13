@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="7da-kE-oBh" customClass="WYNormalCell">
+            <rect key="frame" x="0.0" y="0.0" width="318" height="148"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zBw-3N-ZIu">
+                    <rect key="frame" x="0.0" y="0.0" width="318" height="148"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="148" id="Ymw-zh-rHl"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDT-sg-OcA">
+                    <rect key="frame" x="0.0" y="127" width="318" height="21"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="GDT-sg-OcA" firstAttribute="leading" secondItem="zBw-3N-ZIu" secondAttribute="leading" id="5EU-bg-nYd"/>
+                <constraint firstItem="GDT-sg-OcA" firstAttribute="bottom" secondItem="zBw-3N-ZIu" secondAttribute="bottom" id="5US-Ss-l4T"/>
+                <constraint firstItem="zBw-3N-ZIu" firstAttribute="leading" secondItem="7da-kE-oBh" secondAttribute="leading" id="ZA4-81-P3N"/>
+                <constraint firstItem="GDT-sg-OcA" firstAttribute="trailing" secondItem="zBw-3N-ZIu" secondAttribute="trailing" id="j3Y-bl-1FB"/>
+                <constraint firstItem="zBw-3N-ZIu" firstAttribute="top" secondItem="7da-kE-oBh" secondAttribute="top" id="qil-Xh-8Md"/>
+                <constraint firstAttribute="trailing" secondItem="zBw-3N-ZIu" secondAttribute="trailing" id="teJ-ua-fvb"/>
+                <constraint firstAttribute="bottom" secondItem="zBw-3N-ZIu" secondAttribute="bottom" id="wKR-3l-l3k"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imagView" destination="zBw-3N-ZIu" id="sGP-Q4-0uE"/>
+                <outlet property="titleLabel" destination="GDT-sg-OcA" id="Kf4-xh-A9c"/>
+            </connections>
+            <point key="canvasLocation" x="-48" y="34"/>
+        </view>
+    </objects>
+</document>

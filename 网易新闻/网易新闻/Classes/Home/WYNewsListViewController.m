@@ -11,7 +11,12 @@
 #import "WYNormalCell.h"
 #import <UIImageView+WebCache.h>
 
-static  NSString * cellId = @"cellId";
+static  NSString * normalId = @"normalId";
+static  NSString * ExtraId = @"ExtraId";
+static  NSString * BigImageId = @"BigImageId";
+static  NSString * HeaderId = @"HeaderId";
+
+
 @interface WYNewsListViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property(nonatomic,strong)UITableView * tableView;
@@ -64,7 +69,12 @@ static  NSString * cellId = @"cellId";
     }];
     
     // 注册原型cell
-    [tv registerNib:[UINib nibWithNibName:@"WYNormalCell" bundle:nil] forCellReuseIdentifier:cellId];
+    [tv registerNib:[UINib nibWithNibName:@"WYNormalCell" bundle:nil] forCellReuseIdentifier:normalId];
+    [tv registerNib:[UINib nibWithNibName:@"WYNewsExtraImagesCell" bundle:nil] forCellReuseIdentifier:ExtraId];
+    [tv registerNib:[UINib nibWithNibName:@"WYNewsBigImageCell" bundle:nil] forCellReuseIdentifier:BigImageId];
+    [tv registerNib:[UINib nibWithNibName:@"WYNewsListHeader" bundle:nil] forCellReuseIdentifier:HeaderId];
+
+    
     
     tv.delegate = self;
     tv.dataSource = self;
@@ -79,16 +89,42 @@ static  NSString * cellId = @"cellId";
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WYNormalCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     WYNewsModel * model = _newsList[indexPath.row];
+    
+    NSString * cellId;
+    if (model.hasHead) {
+        cellId = HeaderId;
+    } else if (model.imgType) {
+        cellId = BigImageId;
+    } else if (model.imgextra.count > 0) {
+        cellId = ExtraId;
+    } else {
+        cellId = normalId;
+    }
+    
+    WYNormalCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    
     cell.titleLabel.text =model.title;
     cell.sourcceLabel.text = model.source;
     cell.numLabel.text = @(model.replyCount).description;
 
-    NSURL * url = [NSURL URLWithString:model.imgsrc];
+    NSURL *imageURL = [NSURL URLWithString:model.imgsrc];
+    [cell.imagView sd_setImageWithURL:imageURL];
     
-    [cell.imagView sd_setImageWithURL:url];
-    return cell;
+    // 设置多图 － 如果没有不会进入循环
+    NSInteger idx = 0;
+    for (NSDictionary *dict in model.imgextra) {
+        
+        // 1. 获取url字符串
+        NSURL *url = [NSURL URLWithString:dict[@"imgsrc"]];
+        
+        // 2. 设置图像
+        UIImageView *iv = cell.extraIcon[idx++];
+        
+        [iv sd_setImageWithURL:url];
+
+    }
+     return cell;
 }
 @end
 
