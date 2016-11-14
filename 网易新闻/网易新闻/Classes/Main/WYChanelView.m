@@ -7,6 +7,8 @@
 //
 
 #import "WYChanelView.h"
+#import "WYChanelLabel.h"
+
 @interface WYChanelView()
 
 
@@ -30,14 +32,17 @@
     CGFloat height = 38;
     CGFloat margin = 8;
     for (WYchanelModel * model in chanelModel) {
-        UILabel * l = [UILabel cz_labelWithText:model.tname fontSize:14 color:[UIColor redColor]];
+        WYChanelLabel * l = [WYChanelLabel chanelLabeiWithTitle:model.tname];
 
         l.frame = CGRectMake(x, 0, l.bounds.size.width, height);
         x += l.bounds.size.width + margin;
+        
         [_scrollView addSubview:l];
 
     }
-    
+    _scrollView.contentSize = CGSizeMake(x, height);
+    _scrollView.showsHorizontalScrollIndicator = NO;
+    _scrollView.showsVerticalScrollIndicator = NO;
 }
 
 @end
