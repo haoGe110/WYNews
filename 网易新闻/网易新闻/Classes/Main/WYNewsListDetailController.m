@@ -11,7 +11,7 @@
 #import "WYchanelModel.h"
 
 @interface WYNewsListDetailController ()
-
+@property(nonatomic,weak)WYChanelView * chanelView;
 @end
 
 @implementation WYNewsListDetailController
@@ -25,6 +25,8 @@
     [self setUIup];
     _chanelList = [WYchanelModel chanelModel];
     NSLog(@"%@",_chanelList);
+    _chanelView.chanelModel = _chanelList;
+
 }
 
 - (void)setUIup
@@ -38,6 +40,7 @@
         make.left.right.equalTo(self.view);
         make.height.mas_equalTo(38);
     }];
+    _chanelView = cv;
 }
 
 

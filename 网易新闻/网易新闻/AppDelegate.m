@@ -20,7 +20,7 @@
     // 设置网络指示器 - 非常重要的一个用户体验！
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 
-    sleep(3);
+    sleep(1);
     _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     _window.backgroundColor = [UIColor whiteColor];
     

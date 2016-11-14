@@ -16,7 +16,7 @@
     label.font = [UIFont systemFontOfSize:fontSize];
     label.textColor = color;
     label.numberOfLines = 0;
-    
+    [label sizeToFit];
     return label;
 }
 

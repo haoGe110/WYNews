@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WYchanelModel.h"
 @interface WYChanelView : UIView
 
+// 频道模型数组
+@property(nonatomic,strong)NSArray <WYchanelModel *> * chanelModel;
+
+// 创建视图类方法,方便控制器加载;
 + (instancetype)chanelView;
 @end

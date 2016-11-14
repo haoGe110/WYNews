@@ -48,6 +48,9 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="scrollView" destination="4RQ-e9-ppP" id="Yjr-PS-umU"/>
+            </connections>
             <point key="canvasLocation" x="115" y="-69"/>
         </view>
     </objects>
