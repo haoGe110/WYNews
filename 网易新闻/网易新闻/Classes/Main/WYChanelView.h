@@ -19,4 +19,6 @@
 
 // 创建视图类方法,方便控制器加载;
 + (instancetype)chanelView;
+
+- (void)chanelLabelWithIndex:(NSInteger)index scale:(float)scale;
 @end

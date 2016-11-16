@@ -13,4 +13,5 @@
 // 类方法根据标题创建一个label
 + (instancetype)chanelLabeiWithTitle:(NSString *)title;
 
+@property(nonatomic,assign)float scale;
 @end

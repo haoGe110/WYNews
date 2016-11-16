@@ -52,6 +52,9 @@
     _scrollView.contentSize = CGSizeMake(x, height);
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = NO;
+    
+    [self chanelLabelWithIndex:0 scale:1];
+
 }
 
 // 实现手势的监听方法
@@ -62,6 +65,15 @@
     _selecIndex = l.tag;
     // 发送点击事件
     [self sendActionsForControlEvents:UIControlEventValueChanged];
+    
+
+}
+
+- (void)chanelLabelWithIndex:(NSInteger)index scale:(float)scale
+{
+    WYChanelLabel * l = _scrollView.subviews[index];
+    
+    l.scale = scale;
 }
 @end
 

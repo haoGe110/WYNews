@@ -48,7 +48,7 @@ static  NSString * HeaderId = @"HeaderId";
    
     [[CZNetworkManager sharedManager] newsListWithChannel:_chanelID start:0 completion:^(NSArray *array, NSError *error) {
         
-        NSLog(@"%@",array);
+//        NSLog(@"%@",array);
         
         NSMutableArray * marr = [NSMutableArray array];
         for (NSDictionary * dict in array) {

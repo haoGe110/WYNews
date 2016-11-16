@@ -22,12 +22,25 @@
     l.textAlignment = NSTextAlignmentCenter;
     
     //3. 设置小字体
-    //l.font = [UIFont systemFontOfSize:normalSize];
+    l.font = [UIFont systemFontOfSize:normalSize];
     
 //    l.userInteractionEnabled = YES;
     //4. 返回标签
     return l;
     
+}
+
+- (void)setScale:(float)scale
+{
+    _scale = scale;
+    
+    float max = (float) selectedSize / normalSize;
+    float s = 1 + scale * (max - 1) ;
+    
+    self.transform = CGAffineTransformMakeScale(s, s);
+    
+    self.textColor = [UIColor colorWithRed:scale green:0 blue:0 alpha:1.0];
+
 }
 
 @end
