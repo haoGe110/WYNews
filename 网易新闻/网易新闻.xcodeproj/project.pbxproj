@@ -267,9 +267,9 @@
 			children = (
 				046318681DD872FC00AF6308 /* WYChanelView.h */,
 				046318691DD872FC00AF6308 /* WYChanelView.m */,
-				0463186B1DD8731200AF6308 /* WYChanelView.xib */,
 				0463C5421DD98542003229DE /* WYChanelLabel.h */,
 				0463C5431DD98542003229DE /* WYChanelLabel.m */,
+				0463186B1DD8731200AF6308 /* WYChanelView.xib */,
 				046318731DD8A75900AF6308 /* 频道模型 */,
 			);
 			name = "频道视图";

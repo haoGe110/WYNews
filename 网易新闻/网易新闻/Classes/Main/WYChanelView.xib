@@ -11,12 +11,10 @@
             <rect key="frame" x="0.0" y="0.0" width="508" height="38"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navbar_left_more" translatesAutoresizingMaskIntoConstraints="NO" id="cxU-xU-lzP">
-                    <rect key="frame" x="0.0" y="0.0" width="45" height="38"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navbar_right_more" translatesAutoresizingMaskIntoConstraints="NO" id="8Px-7B-Smb">
-                    <rect key="frame" x="428" y="0.0" width="45" height="38"/>
-                </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4RQ-e9-ppP">
+                    <rect key="frame" x="0.0" y="0.0" width="473" height="38"/>
+                    <color key="backgroundColor" red="0.99215686274509807" green="0.99215686274509807" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
+                </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Sp-cw-tal">
                     <rect key="frame" x="481" y="0.0" width="27" height="38"/>
                     <constraints>
@@ -25,10 +23,12 @@
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" image="channel_nav_plus"/>
                 </button>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4RQ-e9-ppP">
-                    <rect key="frame" x="0.0" y="0.0" width="473" height="38"/>
-                    <color key="backgroundColor" red="0.99215686274509807" green="0.99215686274509807" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
-                </scrollView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navbar_left_more" translatesAutoresizingMaskIntoConstraints="NO" id="cxU-xU-lzP">
+                    <rect key="frame" x="0.0" y="0.0" width="45" height="38"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navbar_right_more" translatesAutoresizingMaskIntoConstraints="NO" id="8Px-7B-Smb">
+                    <rect key="frame" x="428" y="0.0" width="45" height="38"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>

@@ -26,6 +26,15 @@ static  NSString * HeaderId = @"HeaderId";
 
 @implementation WYNewsListViewController
 
+- (instancetype)initWithChanelID:(NSString *)chanelID index:(NSInteger)index
+{
+    self = [super initWithNibName:nil bundle:nil];
+    if (self) {
+        _chanelID = chanelID;
+        _chanelIndex = index;
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -35,7 +44,9 @@ static  NSString * HeaderId = @"HeaderId";
 
 - (void)loadData
 {
-    [[CZNetworkManager sharedManager] newsListWithChannel:@"T1348649079062" start:0 completion:^(NSArray *array, NSError *error) {
+//    _chanelID == nil ? @"T1348649079062" : _chanelID;
+   
+    [[CZNetworkManager sharedManager] newsListWithChannel:_chanelID start:0 completion:^(NSArray *array, NSError *error) {
         
         NSLog(@"%@",array);
         
@@ -62,6 +73,7 @@ static  NSString * HeaderId = @"HeaderId";
     tv.estimatedRowHeight = 100;
     tv.rowHeight = UITableViewAutomaticDimension;
 
+    tv.contentInset = UIEdgeInsetsMake(0, 0, 49, 0);
     [self.view addSubview:tv];
     
     [tv mas_makeConstraints:^(MASConstraintMaker *make) {

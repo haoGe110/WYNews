@@ -31,12 +31,21 @@
     CGFloat x = 45;
     CGFloat height = 38;
     CGFloat margin = 8;
+    
+    NSInteger index = 0;
     for (WYchanelModel * model in chanelModel) {
         WYChanelLabel * l = [WYChanelLabel chanelLabeiWithTitle:model.tname];
 
         l.frame = CGRectMake(x, 0, l.bounds.size.width, height);
         x += l.bounds.size.width + margin;
         
+        // 添加点击label的手势
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapLabel:)];
+        
+        [l addGestureRecognizer:tap];
+        
+        l.tag = index;
+        index++;
         [_scrollView addSubview:l];
 
     }
@@ -45,6 +54,15 @@
     _scrollView.showsVerticalScrollIndicator = NO;
 }
 
+// 实现手势的监听方法
+- (void)tapLabel:(UITapGestureRecognizer *)recognizer
+{
+    UILabel * l = (WYChanelLabel *)recognizer.view;
+    
+    _selecIndex = l.tag;
+    // 发送点击事件
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
+}
 @end
 
 

@@ -17,6 +17,7 @@
     //1. 根据标签创建一个label
     WYChanelLabel * l = [self cz_labelWithText:title fontSize:selectedSize color:[UIColor blackColor]];
     
+    l.userInteractionEnabled = YES;
     //2. 设置居中对齐
     l.textAlignment = NSTextAlignmentCenter;
     
